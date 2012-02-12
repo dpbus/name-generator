@@ -3,6 +3,8 @@
 Run the script with 1 or more filenames as arguments like so:
 
 ```
-name-generator.rb [options] filename1 filename2 ...
+$ name-generator.rb [options] filename1 filename2 ...
 ```
+
+The format of the input file(s) should be one keyword per line. The script will ignore duplicate words, even when across files.
 
