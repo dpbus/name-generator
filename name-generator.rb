@@ -41,31 +41,31 @@ class NameGenerator
 
   def titleize(str)
     str.split(/(\W)/).map(&:capitalize).join
-  end    
+  end
 end
 
-def check_options 
+def check_options
   opts = GetoptLong.new(
-	[ '--help', '-h', GetoptLong::NO_ARGUMENT ])
+  [ '--help', '-h', GetoptLong::NO_ARGUMENT ])
 
   opts.quiet = true
 
-	opts.each do |opt, arg|
-		case opt
-		when '-h', '--help'
-			usage
-			exit
-		end
-	end
+  opts.each do |opt, arg|
+    case opt
+    when '-h', '--help'
+      usage
+      exit
+    end
+  end
 end
 
 def get_args
-	if ARGV.length < 1
-		puts "Wrong number of arguments.\n\n"
-		usage
-		exit 1
-	end 
-	ARGV
+  if ARGV.length < 1
+    puts "Wrong number of arguments.\n\n"
+    usage
+    exit 1
+  end
+  ARGV
 end
 
 def usage
@@ -75,7 +75,7 @@ end
 
 if __FILE__ == $0
 
-  check_options	
+  check_options
 
   filenames = get_args
 
@@ -93,5 +93,4 @@ if __FILE__ == $0
 
   generator = NameGenerator.new(get_args)
   generator.run
-
 end
